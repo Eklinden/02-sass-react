@@ -1,0 +1,21 @@
+@import "./variables";
+
+.hero-content {
+  background-color: $primary-green;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h1 {
+    font-size: 5em;
+    text-align: center;
+  }
+}
+.nav-icon {
+  margin: 2rem;
+}
+.ninja-head {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}

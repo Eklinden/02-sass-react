@@ -1,5 +1,35 @@
 @import "./variables";
 
+p,
+h2,
+button {
+  font-family: $ff-text;
+}
+%button {
+  color: $white-text;
+  background-color: $button-clr;
+  font-weight: 700;
+  margin-top: 1.6em;
+  padding: 0.6em 1.7em;
+  border: none;
+  border-radius: 0.5em;
+  width: max-content;
+  &:hover {
+    cursor: pointer;
+  }
+}
+%card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  button {
+    @extend %button;
+  }
+  img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
 .hero-content {
   background-color: $primary-green;
   height: 80vh;
@@ -7,6 +37,7 @@
   flex-direction: column;
   justify-content: space-between;
   h1 {
+    font-family: "Roboto", sans-serif;
     font-size: 5em;
     text-align: center;
   }
@@ -18,4 +49,94 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+main {
+  background-color: $black-bg;
+  color: $white-text;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .main-min-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: 6rem 0;
+  }
+  .main-big-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 4rem;
+  }
+}
+.small-card {
+  @extend %card;
+}
+.big-card {
+  @extend %card;
+  color: $black-text;
+  background-color: $white-text;
+  p,
+  h2 {
+    padding: 0 16px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  button {
+    margin: 16px;
+    padding: 1em 2em;
+  }
+}
+footer {
+  height: 400px;
+  background-color: rgb(70, 70, 70);
+  display: flex;
+  justify-content: center;
+  .footer-wrapper {
+    color: $white-text;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    padding: 6rem 0;
+    h2 {
+      font-size: 2.2rem;
+    }
+    li {
+      list-style: none;
+      margin-top: 1.3rem;
+    }
+    a {
+      text-decoration: none;
+      color: $white-text;
+      font-family: $ff-text;
+      font-size: 1.1rem;
+    }
+    ul {
+      padding: 0;
+    }
+    .address {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      h2 {
+        margin-bottom: 0.6rem;
+      }
+    }
+    .social-media {
+      li {
+        float: left;
+        margin-right: 1.3rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
